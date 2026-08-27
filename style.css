@@ -43,7 +43,7 @@
   --shadow-gold: 0 8px 28px rgba(212, 175, 55, 0.25);
   
   /* Layout */
-  --header-height: 64px;
+  --header-height: 58px;
 }
 
 /* ── Reset & Base ───────────────────────────────────────────────────────── */
@@ -92,9 +92,10 @@ h1, h2, h3, h4, .font-heading {
 }
 
 .gold-text {
-  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 50%, var(--gold-dark) 100%);
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 60%, var(--gold-dark) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: inline;
 }
 
 .silver-text {
@@ -115,10 +116,10 @@ h1, h2, h3, h4, .font-heading {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 13px 26px;
+  padding: 10px 22px;
   border-radius: var(--radius-sm);
   font-family: 'Manrope', sans-serif;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 700;
   text-decoration: none;
   cursor: pointer;
@@ -155,19 +156,19 @@ h1, h2, h3, h4, .font-heading {
 }
 
 .btn-lg {
-  padding: 16px 36px;
-  font-size: 1.02rem;
+  padding: 15px 32px;
+  font-size: 1rem;
   border-radius: var(--radius-sm);
 }
 
 .btn-sm {
-  padding: 8px 16px;
-  font-size: 0.82rem;
+  padding: 8px 18px;
+  font-size: 0.84rem;
 }
 
 /* ── Section Titles & Badges ─────────────────────────────────────────────── */
 .section {
-  padding: 80px 0;
+  padding: 70px 0;
   position: relative;
 }
 
@@ -233,22 +234,25 @@ h1, h2, h3, h4, .font-heading {
   left: 0;
   right: 0;
   height: var(--header-height);
-  background: rgba(9, 10, 12, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+  background: rgba(9, 10, 12, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
   z-index: 100;
   transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
 }
 
 .header.scrolled {
-  background: rgba(9, 10, 12, 0.95);
-  border-bottom-color: rgba(212, 175, 55, 0.25);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  background: rgba(9, 10, 12, 0.98);
+  border-bottom-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
 }
 
 .header-inner {
   height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -258,35 +262,14 @@ h1, h2, h3, h4, .font-heading {
 .logo-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 0;
+  height: 100%;
 }
 
 .logo-brand img {
-  height: 42px;
+  height: 36px;
   width: auto;
   object-fit: contain;
-}
-
-.logo-brand-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.logo-brand-title {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 900;
-  font-size: 1.1rem;
-  letter-spacing: 0.05em;
-  color: #FFFFFF;
-  line-height: 1;
-}
-
-.logo-brand-sub {
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  color: var(--gold-primary);
-  text-transform: uppercase;
 }
 
 .nav-desktop {
@@ -300,6 +283,7 @@ h1, h2, h3, h4, .font-heading {
   font-weight: 600;
   color: var(--silver-muted);
   transition: color var(--transition-fast);
+  line-height: 1;
 }
 
 .nav-desktop a:hover {
@@ -310,12 +294,17 @@ h1, h2, h3, h4, .font-heading {
   color: var(--gold-primary);
 }
 
+.header-cta-btn {
+  display: flex;
+  align-items: center;
+}
+
 .menu-toggle {
   display: none;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 6px;
 }
 
 .menu-toggle span {
@@ -335,10 +324,10 @@ h1, h2, h3, h4, .font-heading {
   right: 0;
   background: #0D0E12;
   border-bottom: 1px solid var(--gold-border);
-  padding: 24px 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   transform: translateY(-120%);
   opacity: 0;
   visibility: hidden;
@@ -353,7 +342,7 @@ h1, h2, h3, h4, .font-heading {
 }
 
 .mobile-menu a {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--silver-base);
   padding: 8px 0;
@@ -363,10 +352,10 @@ h1, h2, h3, h4, .font-heading {
 /* ── Hero Section ────────────────────────────────────────────────────────── */
 .hero {
   padding-top: calc(var(--header-height) + 40px);
-  padding-bottom: 70px;
+  padding-bottom: 60px;
   position: relative;
   overflow: hidden;
-  min-height: 88vh;
+  min-height: 86vh;
   display: flex;
   align-items: center;
 }
