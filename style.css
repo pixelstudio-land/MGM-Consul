@@ -1025,6 +1025,234 @@ h1, h2, h3, h4, .font-heading {
   color: #000;
 }
 
+/* ── Offer Band ──────────────────────────────────────────────────────────── */
+.offer-band {
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.offer-band::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--gold-light), var(--gold-primary));
+}
+
+.offer-band-price-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gold-light);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.offer-band-price {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  color: var(--text-white);
+  line-height: 1;
+}
+
+.offer-band-price span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gold-primary);
+}
+
+.offer-band-note {
+  font-size: 0.85rem;
+  color: var(--silver-muted);
+  margin-top: 6px;
+}
+
+.offer-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: var(--radius-pill);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--silver-base);
+}
+
+.chip svg {
+  color: var(--gold-primary);
+}
+
+/* ── Thank You Pages ─────────────────────────────────────────────────────── */
+.thankyou-wrapper {
+  min-height: calc(100vh - var(--header-height) - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.thankyou-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.thankyou-card {
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  padding: 48px 36px;
+  max-width: 680px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+  position: relative;
+  z-index: 2;
+}
+
+.thankyou-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+  color: #0A0A0A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.35);
+  animation: pulse-gold-mgm 2.5s infinite;
+}
+
+@keyframes pulse-gold-mgm {
+  0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+  70% { box-shadow: 0 0 0 16px rgba(212, 175, 55, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+.thankyou-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
+  color: var(--text-white);
+  margin-bottom: 14px;
+}
+
+.thankyou-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 540px;
+  margin: 0 auto 36px;
+}
+
+.thankyou-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  text-align: left;
+  margin-bottom: 40px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(212,175,55,0.15);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+@media (min-width: 600px) {
+  .thankyou-steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.thankyou-step {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.thankyou-step-num {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 0.75rem;
+  color: var(--gold-light);
+  background: rgba(212,175,55,0.1);
+  border: 1px solid var(--gold-border);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.thankyou-step-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: var(--text-white);
+}
+
+.thankyou-step-desc {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* WhatsApp Large Button */
+.btn-whatsapp-large {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #25D366, #1EBE5D);
+  color: #FFFFFF;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 1.02rem;
+  letter-spacing: 0.02em;
+  padding: 16px 36px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35);
+  transition: all 0.3s var(--transition-smooth);
+  margin-bottom: 16px;
+  width: fit-content;
+}
+
+.btn-whatsapp-large:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5);
+  background: linear-gradient(135deg, #28E770, #22D065);
+  color: #FFFFFF;
+}
+
 /* ── Responsive adjustments ──────────────────────────────────────────────── */
 @media (max-width: 767px) {
   .nav-desktop, .header-cta-btn {
@@ -1041,5 +1269,12 @@ h1, h2, h3, h4, .font-heading {
   }
   .product-body {
     padding: 22px 18px;
+  }
+  .offer-band {
+    flex-direction: column;
+    text-align: center;
+  }
+  .offer-chips {
+    justify-content: center;
   }
 }
