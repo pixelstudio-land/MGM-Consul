@@ -259,10 +259,14 @@ h1, h2, h3, h4, .font-heading {
   gap: 20px;
 }
 
+.header .logo-brand,
 .logo-brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0;
+}
+
+.header .logo-brand {
   height: 100%;
 }
 
@@ -810,16 +814,33 @@ h1, h2, h3, h4, .font-heading {
   border-top: 1px solid rgba(255,255,255,0.04);
 }
 
+.footer .logo-brand,
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+.footer .logo-brand img,
+.footer-logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
 .footer-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 40px;
   margin-bottom: 40px;
+  align-items: start;
 }
 
 @media (min-width: 768px) {
   .footer-grid {
     grid-template-columns: 2fr 1fr 1.5fr;
+    align-items: start;
   }
 }
 
