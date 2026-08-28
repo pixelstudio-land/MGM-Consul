@@ -668,6 +668,24 @@ h1, h2, h3, h4, .font-heading {
   }
 }
 
+/* 4-item gallery: 2×2 layout */
+.gallery-grid-4 {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+@media (min-width: 580px) {
+  .gallery-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .gallery-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .gallery-item {
   position: relative;
   aspect-ratio: 4/3;
