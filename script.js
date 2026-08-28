@@ -2,13 +2,26 @@
    MGM CONSTRUTORA — SCRIPT INTERATIVO & CONVERSÃO
    ========================================================================== */
 
+// ⚠️ LINK OFICIAL DO FORMULÁRIO RESPONDI APP DA MGM CONSTRUTORA
+const CTA_FORM_URL = "https://form.respondi.app/kMl9KSym";
+
 document.addEventListener("DOMContentLoaded", () => {
+  applyCTA();
   initHeaderAndStickyBar();
   initMobileMenu();
   initFAQ();
   initLightbox();
   initSmoothScroll();
 });
+
+/* ── Atribuição dos Links de Conversão (CTAs) ────────────────────────────── */
+function applyCTA() {
+  document.querySelectorAll("[data-cta='form'], .float-cta, .mobile-sticky-bar a, #header-cta, #hero-cta, #final-cta").forEach(el => {
+    el.href = CTA_FORM_URL;
+    el.target = "_blank";
+    el.rel = "noopener noreferrer";
+  });
+}
 
 /* ── Header Scroll & Mobile Sticky Bar ───────────────────────────────────── */
 function initHeaderAndStickyBar() {
@@ -105,7 +118,7 @@ function initLightbox() {
         </div>
         <div class="lightbox-footer">
           <span class="lightbox-title" id="lightbox-title">Obra MGM Construtora</span>
-          <a href="#contato" class="btn btn-gold btn-sm">Solicitar Orçamento</a>
+          <a href="${CTA_FORM_URL}" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-sm">Solicitar Orçamento</a>
         </div>
       </div>
     `;
@@ -158,7 +171,7 @@ function initSmoothScroll() {
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
         e.preventDefault();
-        const headerHeight = document.querySelector(".header")?.offsetHeight || 64;
+        const headerHeight = document.querySelector(".header")?.offsetHeight || 58;
         const targetPos = targetEl.getBoundingClientRect().top + window.pageYOffset - headerHeight;
 
         window.scrollTo({
